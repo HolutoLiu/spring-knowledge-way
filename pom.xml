@@ -52,7 +52,10 @@
 
     <modules>
         <module>tool-starter</module>
+        <module>support-center</module>
+        <module>business-center</module>
         <module>client-api</module>
+        <module>client-portal</module>
     </modules>
 
     <!-- 引入spring cloud的依赖，不能少，主要用来管理Spring Cloud生态各组件的版本 -->
