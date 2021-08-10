@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>skw-ms-service-user</artifactId>
+    <artifactId>skw-service-user-center</artifactId>
     <packaging>pom</packaging>
     <description>用户服务中心</description>
 
