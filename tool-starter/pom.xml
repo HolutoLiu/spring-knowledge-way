@@ -12,5 +12,7 @@
     <artifactId>tool-starter</artifactId>
     <packaging>pom</packaging>
     <description>工具 starter</description>
-
+    <modules>
+        <module>common-spring-boot-starter</module>
+    </modules>
 </project>

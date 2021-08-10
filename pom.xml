@@ -4,7 +4,7 @@
 
     <groupId>com.skw.saas</groupId>
     <artifactId>spring-knowledge-way</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>${saas.version}</version>
     <packaging>pom</packaging>
     <description>spring知识沉淀</description>
 
@@ -12,6 +12,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <aliyun-spring-boot.version>1.0.0</aliyun-spring-boot.version>
         <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
         <spring-cloud-alibaba.version>2.2.2.RELEASE</spring-cloud-alibaba.version>
@@ -49,6 +51,35 @@
         <knife4j.version>2.0.2</knife4j.version>
         <jetcache-anno.version>2.5.12</jetcache-anno.version>
     </properties>
+    <profiles>
+        <profile>
+            <id>develop</id>
+            <properties>
+                <maven.env>develop</maven.env>
+                <saas.version>1.0.0-SNAPSHOT</saas.version>
+                <core.version>1.0.0-SNAPSHOT</core.version>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <maven.env>test</maven.env>
+                <saas.version>1.0.0-SNAPSHOT</saas.version>
+                <core.version>2.0.0-SNAPSHOT</core.version>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <maven.env>prod</maven.env>
+                <saas.version>1.0.0-SNAPSHOT</saas.version>
+                <core.version>0.0.1</core.version>
+            </properties>
+        </profile>
+    </profiles>
 
     <modules>
         <module>tool-starter</module>
@@ -62,16 +93,16 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -282,10 +313,10 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <configuration>
                     <excludes>
-                        <exclude>**/*.properties</exclude>
+<!--                        <exclude>**/*.properties</exclude>
                         <exclude>**/*.yml</exclude>
                         <exclude>**/log4j2.xml</exclude>
-                        <exclude>**/logback*.xml</exclude>
+                        <exclude>**/logback*.xml</exclude>-->
                         <exclude>**/*Test.java</exclude>
                     </excludes>
                 </configuration>
@@ -339,27 +370,13 @@
         </resources>
     </build>
 
-    <profiles>
-        <profile>
-            <id>develop</id>
-            <properties>
-                <maven.env>develop</maven.env>
-            </properties>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-        <profile>
-            <id>test</id>
-            <properties>
-                <maven.env>test</maven.env>
-            </properties>
-        </profile>
-        <profile>
-            <id>prod</id>
-            <properties>
-                <maven.env>prod</maven.env>
-            </properties>
-        </profile>
-    </profiles>
+    <repositories>
+        <repository>
+            <id>aliyun-repos</id>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>
