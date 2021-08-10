@@ -13,4 +13,8 @@
     <packaging>pom</packaging>
     <description>客户端平台</description>
 
+    <properties>
+        <!-- maven.deploy 是否排除 -->
+        <maven.deploy.skip>true</maven.deploy.skip>
+    </properties>
 </project>

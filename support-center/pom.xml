@@ -13,5 +13,8 @@
     <packaging>pom</packaging>
     <description>支撑服务中心</description>
 
-
+    <properties>
+        <!-- maven.deploy 是否排除 -->
+        <maven.deploy.skip>true</maven.deploy.skip>
+    </properties>
 </project>
