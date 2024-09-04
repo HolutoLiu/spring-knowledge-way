@@ -5,38 +5,43 @@
     <parent>
         <groupId>com.skw.saas</groupId>
         <artifactId>spring-knowledge-way</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
-        <relativePath>../../../pom.xml</relativePath>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>skw-service-user</artifactId>
+    <artifactId>skw-server</artifactId>
     <packaging>jar</packaging>
-    <description>用户服务中心 实现</description>
-
+    <description>后端 Server 的主项目</description>
+    <name>${project.artifactId}</name>
     <properties>
-        <!-- maven.deploy 是否排除 -->
-        <maven.deploy.skip>true</maven.deploy.skip>
+
     </properties>
 
     <dependencies>
-
+        <dependency>
+            <groupId>com.skw.saas</groupId>
+            <artifactId>skw-module-system-biz</artifactId>
+            <version>${revision}</version>
+        </dependency>
     </dependencies>
 
     <build>
+        <!-- 设置构建的 jar 包名 -->
+        <finalName>${project.artifactId}</finalName>
         <plugins>
+            <!-- 打包 -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
                 <executions>
                     <execution>
                         <goals>
-                            <goal>repackage</goal>
+                            <goal>repackage</goal> <!-- 将引入的 jar 打入其中 -->
                         </goals>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
-        <finalName>${project.artifactId}</finalName>
     </build>
 </project>

@@ -4,21 +4,23 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>com.skw.saas</groupId>
-        <artifactId>spring-knowledge-way</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <artifactId>skw-module</artifactId>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>tool-starter</artifactId>
+    <artifactId>skw-module-system-center</artifactId>
     <packaging>pom</packaging>
-    <description>工具 starter</description>
+    <description>
+        system 模块下，我们放通用业务，支撑上层的核心业务。
+        例如说：用户、部门、权限、数据字典等等
+    </description>
 
     <properties>
-        <!-- maven.deploy 是否排除 -->
-        <maven.deploy.skip>true</maven.deploy.skip>
     </properties>
 
     <modules>
-        <module>common-spring-boot-starter</module>
+        <module>skw-module-system-api</module>
+        <module>skw-module-system-biz</module>
     </modules>
 </project>
