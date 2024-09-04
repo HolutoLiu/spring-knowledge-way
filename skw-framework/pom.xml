@@ -13,8 +13,9 @@
 
     <artifactId>skw-framework</artifactId>
     <description>工具 starter</description>
+    <name>${project.artifactId}</name>
 
     <modules>
-        <module>common-spring-boot-starter</module>
+        <module>skw-spring-boot-starter-common</module>
     </modules>
 </project>
