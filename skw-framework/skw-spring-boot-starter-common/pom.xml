@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>skw-spring-boot-starter-common</artifactId>
-    <name>skw-spring-boot-starter-common</name>
+    <name>${project.artifactId}</name>
     <packaging>jar</packaging>
 
     <properties>

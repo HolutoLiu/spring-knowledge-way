@@ -361,7 +361,11 @@
             <!-- 工作流相关结束 -->
 
             <!-- 工具类相关 -->
-
+            <dependency>
+                <groupId>com.skw.saas</groupId>
+                <artifactId>skw-spring-boot-starter-common</artifactId>
+                <version>${revision}</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.projectlombok</groupId>

@@ -17,5 +17,7 @@
 
     <modules>
         <module>skw-spring-boot-starter-common</module>
+        <module>skw-spring-boot-starter-web</module>
+        <module>swk-spring-boot-starter-mybatis</module>
     </modules>
 </project>
